@@ -10,7 +10,7 @@ input[type="text"] {
   margin-left: 10px;
 }
 .loader {
-  display: none;
+  display: block;
   margin-left: 5px;
   font-size: 10px;
   float: left;
@@ -49,4 +49,54 @@ input[type="text"] {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: 'Ceviche One', cursive;
+  font-size: 70px;
+}
+
+.menu-item {
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+
+.wrap {
+  margin-top: 10px;
+}
+.t-row-wrap {
+  margin: 5px;
+}
+.t-row {
+  display: table;
+  table-layout: fixed;
+  width: 70%;
+  border-spacing: 5px;
+  height: auto;
+  margin-top: 5px;
+}
+.t-row-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.intro {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  color: #0E0E0C;
+
+  background: url('../images/great-wall-of-china.jpg') no-repeat center scroll;
+  background-color: @dark;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.page-header {
+  margin-top: 0;
 }

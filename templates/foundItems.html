@@ -1,0 +1,28 @@
+<div class="container wrap">
+  <div class="t-row-wrap">
+    <div class="t-row" ng-repeat="item in foundItemsCtrl.foundXItems">
+      <div class="t-row-cell menu-item">
+        <span ng-if="item.name.toLowerCase().indexOf('eggplant') !== -1"><i class="fa fa-star" aria-hidden="true"></i></span>
+        <!-- <span><i class="fa fa-cutlery fa-lg" aria-hidden="true"></i></span> -->
+        <span ng-if="item.name.toLowerCase().indexOf('garlic') !== -1"><i class="fa fa-fire" aria-hidden="true"></i></span>
+        <span ng-if="item.name.toLowerCase().indexOf('for 2') !== -1">
+          <i class="fa fa-male" aria-hidden="true"></i>
+          <i class="fa fa-female" aria-hidden="true"></i>
+        </span>
+        <span> </span>
+        {{item.name}}
+      </div>
+      <div class="t-row-cell">
+        <button class="btn btn-danger" ng-click="foundItemsCtrl.onRemove({index: $index});">Don't want this one!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <ul>
+  <li ng-repeat="item in foundItemsCtrl.foundXItems">
+    {{ item.name }}
+    <button ng-click="foundItemsCtrl.onRemove({index: $index});">Don't want this one!</button>
+  </li>
+</ul> -->

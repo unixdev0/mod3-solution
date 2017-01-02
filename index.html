@@ -1,24 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="NarrowItDownApp">
   <head>
     <title>Narrow Down Your Menu Choice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Modak|Ceviche+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
   </head>
 <body>
-   <div class="container">
+  <div class="page-header intro">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
+  </div>
+   <div class="container">
+     <div ng-controller='NarrowItDownController as ctrl'>
+       <div class="row">
+          <!-- <div class="col-md-12 text-center">
+            <h1>Narrow Down Your Chinese Menu Choice</h1>
+          </div> -->
+          <div class="col-md-12 text-center">
+          <div class="form-group">
 
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control">
+            <!-- <input list="browsers" name="browser">
+              <datalist id="browsers">
+                <option value="Internet Explorer"> -->
+              <input type="text" placeholder="search term" class="form-control" ng-model="ctrl.searchTerm">
+              <button class="btn btn-primary narrow-button" ng-click="ctrl.logMenuItems();" >Narrow It Down For Me!</button>
+            </div>
+            <div class="errorMessage" ng-if="typeof(item.shipping)!==undefined">
+              {{ctrl.errorMessage}}
+            </div>
+        </div>
+      </div>
+      <!-- found-items should be implemented as a component -->
+      <div class="row">
+          <found-items ng-if="ctrl.found.length > 0 " found-x-items="ctrl.found" on-remove="ctrl.removeItem(index)" ></found-items>
+      </div>
     </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary">Narrow It Down For Me!</button>
-    </div>
-
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
   </div>
 
 </body>

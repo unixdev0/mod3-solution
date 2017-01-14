@@ -40,7 +40,7 @@ function NarrowItDownController($q, MenuSearchService, WildChar) {
 
   ctrl.logMenuItems = function () {
     if (typeof(ctrl.searchTerm) === 'undefined' || ctrl.searchTerm.length == 0) {
-      ctrl.errorMessage = 'Please enter search terms';
+      ctrl.errorMessage = 'Nothing Found';
       return;
     }
     else {
@@ -77,7 +77,7 @@ function NarrowItDownController($q, MenuSearchService, WildChar) {
   ctrl.menuItems = new Set();
   ctrl.getMenuItems = function () {
     if (type(ctrl.searchTerm) === 'undefined') {
-      ctrl.errorMessage = 'Please enter the search terms';
+      ctrl.errorMessage = 'Nothing Found';
     }
     delete ctrl.errorMessage;
 

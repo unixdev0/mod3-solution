@@ -64,6 +64,7 @@ function NarrowItDownController($q, MenuSearchService, WildChar) {
     if (typeof(ctrl.searchTerm) !== 'undefined') {
       delete ctrl.errorMessage;
     }
+    delete ctrl.errorMessage;
     var promise = MenuSearchService.getLuckyMenuItems(searchLucky);
     promise.then(function (response) {
       console.log(response);

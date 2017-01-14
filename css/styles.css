@@ -118,6 +118,17 @@ h1 {
   vertical-align: middle;*/
 }
 
+p.highlight-important {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 10px;
+  padding-top: 10px;
+}
+
+p span.highlight-red {
+  color: red;
+}
+
 p.shift-right {
     margin: 0 0 10px;
     padding-top: -10px;

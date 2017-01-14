@@ -1,14 +1,17 @@
-h1 {
+/*h1 {
   margin-bottom: 30px;
-}
-input[type="text"] {
+}*/
+
+/*input[type="text"] {
   width: 200px;
   float: left;
-}
-.narrow-button {
+}*/
+
+/*.narrow-button {
   float: left;
   margin-left: 10px;
-}
+}*/
+/*
 .loader {
   display: block;
   margin-left: 5px;
@@ -49,7 +52,7 @@ input[type="text"] {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
+}*/
 
 h1 {
   text-transform: uppercase;
@@ -99,4 +102,49 @@ h1 {
 
 .page-header {
   margin-top: 0;
+}
+
+.form-control-btn {
+  width: 40%;
+  height: auto;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.intro-z {
+  margin-top: 100px;
+  /*width: 100%;
+  vertical-align: middle;*/
+}
+
+p.shift-right {
+    margin: 0 0 10px;
+    padding-top: -10px;
+    padding-left: 180px;
+    font-family: 'Ceviche One', cursive;
+    font-size: 12px;
+}
+
+img.shift-center {
+    width: 50%;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.pretty-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 10px;
+  color: #090909;
+}
+
+.heart {
+  color: #cd3434;
+}
+
+.footer {
+  font-size: 10px;
 }

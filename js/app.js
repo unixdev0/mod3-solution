@@ -32,17 +32,36 @@ function FoundItemsDirectiveController() {
   }
 }
 
-NarrowItDownController.$inject = ['MenuSearchService', 'WildChar'];
-function NarrowItDownController(MenuSearchService, WildChar) {
+NarrowItDownController.$inject = ['$q', 'MenuSearchService', 'WildChar'];
+function NarrowItDownController($q, MenuSearchService, WildChar) {
   var ctrl = this;
 
   ctrl.found = [];
 
   ctrl.logMenuItems = function () {
-    if (typeof(ctrl.searchTerm) === 'undefined') {
-      ctrl.searchTerm = WildChar;
+    if (typeof(ctrl.searchTerm) === 'undefined' || ctrl.searchTerm.length == 0) {
+      ctrl.errorMessage = 'Please enter search terms';
+      return;
+    }
+    else {
+      delete ctrl.errorMessage;
     }
     var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase());
+    promise.then(function (response) {
+      console.log(response);
+      ctrl.found = response;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  };
+
+  ctrl.logLuckyMenuItems = function () {
+    var searchLucky = 'for 2';
+    if (typeof(ctrl.searchTerm) !== 'undefined') {
+      delete ctrl.errorMessage;
+    }
+    var promise = MenuSearchService.getLuckyMenuItems(searchLucky);
     promise.then(function (response) {
       console.log(response);
       ctrl.found = response;
@@ -111,6 +130,27 @@ function MenuSearchService($http, ApiBasePath, WildChar) {
             if (data[item].description.indexOf(searchTerm) !== -1) {
               items.push(data[item]);
             }
+          }
+        }
+      }
+      return items;
+    });
+
+    return response;
+  };
+
+  service.getLuckyMenuItems = function (searchLucky) {
+    var response = $http({
+      method: "GET",
+      url: (ApiBasePath + "/menu_items.json"),
+    }).then(function(result) {
+      var items = [];
+      if (result.data.menu_items !== 'undefined') {
+        var data = result.data.menu_items;
+        for (var idx = 0; idx < data.length; idx++) {
+          var col = data[idx].description.trim().split(" ");
+          if (data[idx].name.indexOf(searchLucky) !== -1) {
+            items.push(data[idx]);
           }
         }
       }

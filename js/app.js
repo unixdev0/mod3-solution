@@ -134,7 +134,7 @@ function MenuSearchService($http, ApiBasePath, WildChar) {
               items.push(data[item]);
           }
           else {
-            if (data[item].description.indexOf(searchTerm) !== -1) {
+            if (data[item].name.toLowerCase().indexOf(searchTerm) !== -1) {
               items.push(data[item]);
             }
           }

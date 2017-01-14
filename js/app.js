@@ -50,6 +50,9 @@ function NarrowItDownController($q, MenuSearchService, WildChar) {
     promise.then(function (response) {
       console.log(response);
       ctrl.found = response;
+      if (ctrl.found.length == 0) {
+        ctrl.errorMessage = "Nothing Found";
+      }
     })
     .catch(function (error) {
       console.log(error);
@@ -82,6 +85,9 @@ function NarrowItDownController($q, MenuSearchService, WildChar) {
     promise.then(function (response) {
       console.log(response);
       ctrl.menuItems = response;
+      if (ctrl.menuItems.length == 0) {
+        ctrl.errorMessage = "Nothing Found";
+      }
     })
     .catch(function (error) {
       console.log(error);

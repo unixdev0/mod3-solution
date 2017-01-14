@@ -51,7 +51,7 @@
               <button class="btn btn-default form-control-btn pretty-button" ng-click="ctrl.logMenuItems();" >Narrow It Down For Me!</button>
               <button class="btn btn-default form-control-btn pretty-button" ng-click="ctrl.logLuckyMenuItems();" >I'm Feeling Lucky!</button>
             </div>
-            <div ng-if="typeof(ctrl.errorMessage)!=='undefined'">
+            <div class="error-msg" ng-if="typeof(ctrl.errorMessage)!=='undefined'">
               {{ctrl.errorMessage}}
             </div>
         </div>

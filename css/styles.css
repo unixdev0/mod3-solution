@@ -129,6 +129,10 @@ p span.highlight-red {
   color: red;
 }
 
+.error-msg {
+  color: red;
+}
+
 p.shift-right {
     margin: 0 0 10px;
     padding-top: -10px;
